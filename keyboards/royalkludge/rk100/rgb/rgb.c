@@ -9,7 +9,7 @@ bool rgb_matrix_indicators_kb(void) {
         return false;
     }
     led_t current_host_keyboard_led_state = host_keyboard_led_state();
-    rgb_matrix_set_color(LED5_RBG_MATRIX_INDEX, 0, 0, current_host_keyboard_led_state.num_lock ? 255 : 0);
-    rgb_matrix_set_color(LED234_RGB_MATRIX_INDEX, 0, 255, current_host_keyboard_led_state.caps_lock ? 255 : 0);
+    rgb_matrix_set_color(LED5_RBG_MATRIX_INDEX, 0, current_host_keyboard_led_state.num_lock ? 255 : 0, 0);
+    rgb_matrix_set_color(LED234_RGB_MATRIX_INDEX, 0, current_host_keyboard_led_state.caps_lock ? 255 : 0, 255);
     return true;
 }
